@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constellation — Interactive Particle Field</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080b0f;
+      --particle: #c8d8e8;
+      --line: rgba(180, 210, 240, 0.18);
+      --accent: #7ab3d4;
+      --text: rgba(200, 220, 235, 0.55);
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: var(--bg);
+      overflow: hidden;
+      cursor: none;
+    }
+
+    canvas {
+      display: block;
+      position: fixed;
+      inset: 0;
+    }
+
+    .ui {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      letter-spacing: 0.25em;
+      color: rgba(200, 222, 240, 0.82);
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+      letter-spacing: 0.35em;
+      color: var(--text);
+      margin-top: 1rem;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 2s 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hint {
+      position: fixed;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(180, 200, 220, 0.25);
+      opacity: 0;
+      animation: fadeUp 2s 2s ease forwards;
+    }
+
+    .cursor {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 100;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s, height 0.2s, opacity 0.2s;
+      box-shadow: 0 0 12px 2px rgba(122, 179, 212, 0.6);
+    }
+
+    .cursor-ring {
+      position: fixed;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(122, 179, 212, 0.3);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 100;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease, border-color 0.3s;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="c"></canvas>
+
+<div class="ui">
+  <div class="title">Constellation</div>
+  <div class="subtitle">move your cursor through the field</div>
+</div>
+<div class="hint">interactive particle system &nbsp;&mdash;&nbsp; html / css / javascript</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<script>
+  // --- Cursor ---
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursorRing');
+  let mx = -999, my = -999;
+  let rx = -999, ry = -999;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top  = my + 'px';
+  });
+
+  (function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animRing);
+  })();
+
+  // --- Canvas ---
+  const canvas = document.getElementById('c');
+  const ctx    = canvas.getContext('2d');
+
+  let W, H, particles = [];
+  const COUNT   = 120;
+  const CONNECT = 140;   // max distance to draw lines
+  const MOUSE_R = 180;   // repulsion radius
+  const MOUSE_F = 0.035; // repulsion force
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', () => { resize(); init(); });
+  resize();
+
+  class Particle {
+    constructor() { this.reset(true); }
+    reset(initial) {
+      this.x  = Math.random() * W;
+      this.y  = Math.random() * H;
+      this.vx = (Math.random() - 0.5) * 0.35;
+      this.vy = (Math.random() - 0.5) * 0.35;
+      this.r  = Math.random() * 1.5 + 0.6;
+      this.alpha = Math.random() * 0.5 + 0.3;
+    }
+    update() {
+      // Mouse repulsion
+      const dx = this.x - mx;
+      const dy = this.y - my;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < MOUSE_R && dist > 0) {
+        const force = (MOUSE_R - dist) / MOUSE_R;
+        this.vx += (dx / dist) * force * MOUSE_F * 6;
+        this.vy += (dy / dist) * force * MOUSE_F * 6;
+      }
+
+      // Damping
+      this.vx *= 0.985;
+      this.vy *= 0.985;
+
+      this.x += this.vx;
+      this.y += this.vy;
+
+      // Wrap edges
+      if (this.x < -10) this.x = W + 10;
+      if (this.x > W+10) this.x = -10;
+      if (this.y < -10) this.y = H + 10;
+      if (this.y > H+10) this.y = -10;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(200, 220, 240, ${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  function init() {
+    particles = Array.from({ length: COUNT }, () => new Particle());
+  }
+
+  function drawLines() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx   = particles[i].x - particles[j].x;
+        const dy   = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < CONNECT) {
+          const opacity = (1 - dist / CONNECT) * 0.22;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(160, 200, 230, ${opacity})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+
+      // Lines to mouse
+      const dx   = particles[i].x - mx;
+      const dy   = particles[i].y - my;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < MOUSE_R * 0.9) {
+        const opacity = (1 - dist / (MOUSE_R * 0.9)) * 0.45;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mx, my);
+        ctx.strokeStyle = `rgba(122, 179, 212, ${opacity})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+    }
+  }
+
+  // Subtle vignette gradient (drawn once, reused)
+  let vignetteCache = null;
+  function drawVignette() {
+    if (!vignetteCache || vignetteCache.w !== W || vignetteCache.h !== H) {
+      const grad = ctx.createRadialGradient(W/2, H/2, H*0.2, W/2, H/2, H*0.85);
+      grad.addColorStop(0, 'rgba(8,11,15,0)');
+      grad.addColorStop(1, 'rgba(8,11,15,0.75)');
+      vignetteCache = { grad, w: W, h: H };
+    }
+    ctx.fillStyle = vignetteCache.grad;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    drawLines();
+    particles.forEach(p => { p.update(); p.draw(); });
+    drawVignette();
+    requestAnimationFrame(loop);
+  }
+
+  init();
+  loop();
+</script>
+</body>
+</html>
