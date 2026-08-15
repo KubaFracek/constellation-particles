@@ -29,8 +29,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Link EAS project
-        run: eas init --id ${{ secrets.EXPO_PROJECT_ID }} --non-interactive
+      - name: Configure EAS project ID
+        env:
+          EXPO_PROJECT_ID: ${{ secrets.EXPO_PROJECT_ID }}
+        run: |
+          node <<'EOF'
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
+          app.expo.extra = app.expo.extra ?? {};
+          app.expo.extra.eas = { projectId: process.env.EXPO_PROJECT_ID };
+          fs.writeFileSync('app.json', JSON.stringify(app, null, 2) + '\n');
+          EOF
 
       - name: Build Android preview APK
         run: eas build --platform android --profile preview --non-interactive
