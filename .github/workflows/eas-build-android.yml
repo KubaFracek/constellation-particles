@@ -29,5 +29,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Link EAS project
+        run: eas init --id ${{ secrets.EXPO_PROJECT_ID }} --non-interactive
+
       - name: Build Android preview APK
         run: eas build --platform android --profile preview --non-interactive
