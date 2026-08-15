@@ -9,11 +9,18 @@ export default function TabLayout() {
 
   return (
     <Tabs
+      initialRouteName="scan"
       screenOptions={{
         tabBarActiveTintColor: theme.colors.primary,
         headerStyle: { backgroundColor: theme.colors.surface },
         headerTintColor: theme.colors.primary,
       }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          href: null,
+        }}
+      />
       <Tabs.Screen
         name="scan"
         options={{
