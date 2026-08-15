@@ -1,0 +1,531 @@
+{
+  "recipes": [
+    {
+      "id": "pl-001",
+      "title": "Jajecznica z pomidorami",
+      "time_minutes": 10,
+      "tags": ["śniadanie", "szybkie"],
+      "ingredients": [
+        { "name": "jajko", "amount": 3, "unit": "szt", "required": true },
+        { "name": "pomidor", "amount": 2, "unit": "szt", "required": true },
+        { "name": "masło", "amount": 20, "unit": "g", "required": false }
+      ],
+      "steps": [
+        "Pokrój pomidory w kostkę.",
+        "Na patelni rozpuść masło i podsmaż pomidory 2 minuty.",
+        "Wbij jajka, mieszaj do ścięcia. Dopraw solą i pieprzem."
+      ]
+    },
+    {
+      "id": "pl-002",
+      "title": "Kanapka z serem i szynką",
+      "time_minutes": 5,
+      "tags": ["śniadanie", "szybkie"],
+      "ingredients": [
+        { "name": "chleb", "amount": 2, "unit": "kromki", "required": true },
+        { "name": "ser", "amount": 2, "unit": "plastry", "required": true },
+        { "name": "szynka", "amount": 2, "unit": "plastry", "required": true },
+        { "name": "masło", "amount": 10, "unit": "g", "required": false }
+      ],
+      "steps": [
+        "Posmaruj kromki masłem.",
+        "Połóż ser i szynkę, złóż kanapkę."
+      ]
+    },
+    {
+      "id": "pl-003",
+      "title": "Sałatka z pomidorów i ogórka",
+      "time_minutes": 8,
+      "tags": ["sałatka", "wegetariańskie"],
+      "ingredients": [
+        { "name": "pomidor", "amount": 2, "unit": "szt", "required": true },
+        { "name": "ogórek", "amount": 1, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 1, "unit": "łyżka", "required": false },
+        { "name": "cytryna", "amount": 0.5, "unit": "szt", "required": false }
+      ],
+      "steps": [
+        "Pokrój warzywa w plastry.",
+        "Skrop olejem i sokiem z cytryny, dopraw solą."
+      ]
+    },
+    {
+      "id": "pl-004",
+      "title": "Makaron aglio e olio",
+      "time_minutes": 20,
+      "tags": ["obiad", "włoskie"],
+      "ingredients": [
+        { "name": "makaron", "amount": 200, "unit": "g", "required": true },
+        { "name": "czosnek", "amount": 3, "unit": "ząbki", "required": true },
+        { "name": "olej", "amount": 3, "unit": "łyżki", "required": true },
+        { "name": "bazylia", "amount": 5, "unit": "listków", "required": false }
+      ],
+      "steps": [
+        "Ugotuj makaron al dente.",
+        "Podsmaż czosnek na oleju, dodaj makaron i wymieszaj.",
+        "Podawaj z bazylią."
+      ]
+    },
+    {
+      "id": "pl-005",
+      "title": "Ryż z kurczakiem i warzywami",
+      "time_minutes": 35,
+      "tags": ["obiad", "sycące"],
+      "ingredients": [
+        { "name": "ryż", "amount": 200, "unit": "g", "required": true },
+        { "name": "kurczak", "amount": 300, "unit": "g", "required": true },
+        { "name": "marchew", "amount": 1, "unit": "szt", "required": true },
+        { "name": "cebula", "amount": 1, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 2, "unit": "łyżki", "required": false }
+      ],
+      "steps": [
+        "Ugotuj ryż.",
+        "Podsmaż kurczaka z cebulą i marchewką.",
+        "Połącz z ryżem i dopraw."
+      ]
+    },
+    {
+      "id": "pl-006",
+      "title": "Ziemniaki pieczone z czosnkiem",
+      "time_minutes": 45,
+      "tags": ["obiad", "wegetariańskie"],
+      "ingredients": [
+        { "name": "ziemniak", "amount": 4, "unit": "szt", "required": true },
+        { "name": "czosnek", "amount": 2, "unit": "ząbki", "required": true },
+        { "name": "olej", "amount": 2, "unit": "łyżki", "required": true },
+        { "name": "bazylia", "amount": 3, "unit": "listków", "required": false }
+      ],
+      "steps": [
+        "Pokrój ziemniaki w kliny, wymieszaj z olejem i czosnkiem.",
+        "Piecz 40 minut w 200°C.",
+        "Podawaj z bazylią."
+      ]
+    },
+    {
+      "id": "pl-007",
+      "title": "Omlet warzywny",
+      "time_minutes": 12,
+      "tags": ["śniadanie", "szybkie"],
+      "ingredients": [
+        { "name": "jajko", "amount": 3, "unit": "szt", "required": true },
+        { "name": "papryka", "amount": 0.5, "unit": "szt", "required": true },
+        { "name": "cebula", "amount": 0.5, "unit": "szt", "required": true },
+        { "name": "masło", "amount": 15, "unit": "g", "required": false }
+      ],
+      "steps": [
+        "Podsmaż pokrojoną paprykę i cebulę.",
+        "Wlej rozbite jajka i smaż omlet z obu stron."
+      ]
+    },
+    {
+      "id": "pl-008",
+      "title": "Tosty serowe",
+      "time_minutes": 8,
+      "tags": ["śniadanie", "szybkie"],
+      "ingredients": [
+        { "name": "chleb", "amount": 4, "unit": "kromki", "required": true },
+        { "name": "ser", "amount": 80, "unit": "g", "required": true },
+        { "name": "masło", "amount": 10, "unit": "g", "required": false }
+      ],
+      "steps": [
+        "Połóż ser między kromki chleba.",
+        "Opiecz w tosterze do roztopienia sera."
+      ]
+    },
+    {
+      "id": "pl-009",
+      "title": "Sałatka z kurczakiem",
+      "time_minutes": 25,
+      "tags": ["sałatka", "fit"],
+      "ingredients": [
+        { "name": "kurczak", "amount": 200, "unit": "g", "required": true },
+        { "name": "sałata", "amount": 1, "unit": "główka", "required": true },
+        { "name": "pomidor", "amount": 1, "unit": "szt", "required": true },
+        { "name": "ogórek", "amount": 1, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 1, "unit": "łyżka", "required": false }
+      ],
+      "steps": [
+        "Usmaż kurczaka i ostudź.",
+        "Wymieszaj warzywa, dodaj kurczaka i polej olejem."
+      ]
+    },
+    {
+      "id": "pl-010",
+      "title": "Pierogi leniwe",
+      "time_minutes": 30,
+      "tags": ["obiad", "domowe"],
+      "ingredients": [
+        { "name": "twaróg", "amount": 250, "unit": "g", "required": true },
+        { "name": "jajko", "amount": 1, "unit": "szt", "required": true },
+        { "name": "mąka", "amount": 150, "unit": "g", "required": true },
+        { "name": "masło", "amount": 30, "unit": "g", "required": false }
+      ],
+      "steps": [
+        "Wymieszaj twaróg, jajko i mąkę.",
+        "Uformuj wałek, pokrój na kawałki i ugotuj 3 minuty.",
+        "Podawaj z roztopionym masłem."
+      ]
+    },
+    {
+      "id": "pl-011",
+      "title": "Zupa pomidorowa",
+      "time_minutes": 40,
+      "tags": ["zupa", "domowe"],
+      "ingredients": [
+        { "name": "pomidor", "amount": 5, "unit": "szt", "required": true },
+        { "name": "cebula", "amount": 1, "unit": "szt", "required": true },
+        { "name": "czosnek", "amount": 2, "unit": "ząbki", "required": true },
+        { "name": "masło", "amount": 20, "unit": "g", "required": false },
+        { "name": "bazylia", "amount": 5, "unit": "listków", "required": false }
+      ],
+      "steps": [
+        "Podsmaż cebulę i czosnek na maśle.",
+        "Dodaj pomidory, zalej wodą i gotuj 25 minut.",
+        "Zblenduj, dopraw i podawaj z bazylią."
+      ]
+    },
+    {
+      "id": "pl-012",
+      "title": "Naleśniki z serem",
+      "time_minutes": 30,
+      "tags": ["deser", "domowe"],
+      "ingredients": [
+        { "name": "mleko", "amount": 300, "unit": "ml", "required": true },
+        { "name": "jajko", "amount": 2, "unit": "szt", "required": true },
+        { "name": "mąka", "amount": 150, "unit": "g", "required": true },
+        { "name": "ser", "amount": 200, "unit": "g", "required": true },
+        { "name": "cukier", "amount": 2, "unit": "łyżki", "required": false }
+      ],
+      "steps": [
+        "Zrob ciasto na naleśniki i usmaż cienkie naleśniki.",
+        "Wymieszaj ser z cukrem, nadziej naleśniki.",
+        "Podawaj na ciepło lub zimno."
+      ]
+    },
+    {
+      "id": "pl-013",
+      "title": "Jajka na twardo z sałatką",
+      "time_minutes": 15,
+      "tags": ["śniadanie", "szybkie"],
+      "ingredients": [
+        { "name": "jajko", "amount": 4, "unit": "szt", "required": true },
+        { "name": "sałata", "amount": 0.5, "unit": "główka", "required": true },
+        { "name": "ogórek", "amount": 1, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 1, "unit": "łyżka", "required": false }
+      ],
+      "steps": [
+        "Ugotuj jajka na twardo 9 minut.",
+        "Podawaj z sałatką z ogórka skropioną olejem."
+      ]
+    },
+    {
+      "id": "pl-014",
+      "title": "Makaron z pieczarkami",
+      "time_minutes": 25,
+      "tags": ["obiad", "wegetariańskie"],
+      "ingredients": [
+        { "name": "makaron", "amount": 250, "unit": "g", "required": true },
+        { "name": "pieczarka", "amount": 300, "unit": "g", "required": true },
+        { "name": "cebula", "amount": 1, "unit": "szt", "required": true },
+        { "name": "śmietana", "amount": 100, "unit": "ml", "required": true },
+        { "name": "masło", "amount": 20, "unit": "g", "required": false }
+      ],
+      "steps": [
+        "Ugotuj makaron.",
+        "Podsmaż pieczarki z cebulą, dodaj śmietanę.",
+        "Wymieszaj z makaronem."
+      ]
+    },
+    {
+      "id": "pl-015",
+      "title": "Sałatka z tuńczykiem",
+      "time_minutes": 10,
+      "tags": ["sałatka", "szybkie"],
+      "ingredients": [
+        { "name": "tuńczyk", "amount": 1, "unit": "puszka", "required": true },
+        { "name": "kukurydza", "amount": 100, "unit": "g", "required": true },
+        { "name": "ogórek", "amount": 1, "unit": "szt", "required": true },
+        { "name": "jogurt", "amount": 2, "unit": "łyżki", "required": false }
+      ],
+      "steps": [
+        "Wymieszaj tuńczyka, kukurydzę i ogórek.",
+        "Dodaj jogurt jako sos."
+      ]
+    },
+    {
+      "id": "pl-016",
+      "title": "Kotlety ziemniaczane",
+      "time_minutes": 35,
+      "tags": ["obiad", "wegetariańskie"],
+      "ingredients": [
+        { "name": "ziemniak", "amount": 5, "unit": "szt", "required": true },
+        { "name": "jajko", "amount": 1, "unit": "szt", "required": true },
+        { "name": "mąka", "amount": 3, "unit": "łyżki", "required": true },
+        { "name": "cebula", "amount": 1, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 3, "unit": "łyżki", "required": true }
+      ],
+      "steps": [
+        "Ugotuj i zetrzyj ziemniaki, dodaj jajko, mąkę i cebulę.",
+        "Formuj kotlety i smaż na oleju z obu stron."
+      ]
+    },
+    {
+      "id": "pl-017",
+      "title": "Smoothie bananowo-jogurtowe",
+      "time_minutes": 5,
+      "tags": ["śniadanie", "szybkie"],
+      "ingredients": [
+        { "name": "banan", "amount": 1, "unit": "szt", "required": true },
+        { "name": "jogurt", "amount": 200, "unit": "ml", "required": true },
+        { "name": "mleko", "amount": 100, "unit": "ml", "required": false }
+      ],
+      "steps": [
+        "Zblenduj banana z jogurtem i mlekiem.",
+        "Podawaj od razu."
+      ]
+    },
+    {
+      "id": "pl-018",
+      "title": "Wrap z kurczakiem",
+      "time_minutes": 20,
+      "tags": ["obiad", "szybkie"],
+      "ingredients": [
+        { "name": "tortilla", "amount": 2, "unit": "szt", "required": true },
+        { "name": "kurczak", "amount": 200, "unit": "g", "required": true },
+        { "name": "sałata", "amount": 2, "unit": "listki", "required": true },
+        { "name": "pomidor", "amount": 1, "unit": "szt", "required": true },
+        { "name": "jogurt", "amount": 2, "unit": "łyżki", "required": false }
+      ],
+      "steps": [
+        "Usmaż kurczaka i pokrój warzywa.",
+        "Złóż składniki w tortilli z sosem jogurtowym."
+      ]
+    },
+    {
+      "id": "pl-019",
+      "title": "Brokuły z czosnkiem",
+      "time_minutes": 15,
+      "tags": ["obiad", "fit"],
+      "ingredients": [
+        { "name": "brokuł", "amount": 400, "unit": "g", "required": true },
+        { "name": "czosnek", "amount": 2, "unit": "ząbki", "required": true },
+        { "name": "olej", "amount": 2, "unit": "łyżki", "required": true }
+      ],
+      "steps": [
+        "Ugotuj brokuły na parze 8 minut.",
+        "Podsmaż czosnek na oleju i polej brokuły."
+      ]
+    },
+    {
+      "id": "pl-020",
+      "title": "Sałatka z fasolą",
+      "time_minutes": 10,
+      "tags": ["sałatka", "wegetariańskie"],
+      "ingredients": [
+        { "name": "fasola", "amount": 240, "unit": "g", "required": true },
+        { "name": "cebula", "amount": 0.5, "unit": "szt", "required": true },
+        { "name": "pomidor", "amount": 1, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 1, "unit": "łyżka", "required": false }
+      ],
+      "steps": [
+        "Odcedź fasolę i wymieszaj z pokrojoną cebulą i pomidorem.",
+        "Skrop olejem i dopraw."
+      ]
+    },
+    {
+      "id": "pl-021",
+      "title": "Jajecznica z boczkiem",
+      "time_minutes": 12,
+      "tags": ["śniadanie", "sycące"],
+      "ingredients": [
+        { "name": "jajko", "amount": 3, "unit": "szt", "required": true },
+        { "name": "boczek", "amount": 80, "unit": "g", "required": true },
+        { "name": "masło", "amount": 10, "unit": "g", "required": false }
+      ],
+      "steps": [
+        "Usmaż boczek na chrupko.",
+        "Dodaj jajka i usmaż jajecznicę."
+      ]
+    },
+    {
+      "id": "pl-022",
+      "title": "Ryba pieczona z cytryną",
+      "time_minutes": 30,
+      "tags": ["obiad", "fit"],
+      "ingredients": [
+        { "name": "łosoś", "amount": 300, "unit": "g", "required": true },
+        { "name": "cytryna", "amount": 1, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 1, "unit": "łyżka", "required": true },
+        { "name": "bazylia", "amount": 4, "unit": "listków", "required": false }
+      ],
+      "steps": [
+        "Skrop łososia olejem i sokiem z cytryny.",
+        "Piecz 20 minut w 190°C, podawaj z bazylią."
+      ]
+    },
+    {
+      "id": "pl-023",
+      "title": "Placki z cukinii",
+      "time_minutes": 25,
+      "tags": ["obiad", "wegetariańskie"],
+      "ingredients": [
+        { "name": "cukinia", "amount": 2, "unit": "szt", "required": true },
+        { "name": "jajko", "amount": 2, "unit": "szt", "required": true },
+        { "name": "mąka", "amount": 4, "unit": "łyżki", "required": true },
+        { "name": "cebula", "amount": 0.5, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 3, "unit": "łyżki", "required": true }
+      ],
+      "steps": [
+        "Zetrzyj cukinię, wymieszaj z jajkiem, mąką i cebulą.",
+        "Smaż placki na rozgrzanym oleju."
+      ]
+    },
+    {
+      "id": "pl-024",
+      "title": "Krem z brokułów",
+      "time_minutes": 35,
+      "tags": ["zupa", "wegetariańskie"],
+      "ingredients": [
+        { "name": "brokuł", "amount": 500, "unit": "g", "required": true },
+        { "name": "ziemniak", "amount": 2, "unit": "szt", "required": true },
+        { "name": "cebula", "amount": 1, "unit": "szt", "required": true },
+        { "name": "śmietana", "amount": 100, "unit": "ml", "required": false }
+      ],
+      "steps": [
+        "Gotuj brokuły, ziemniaki i cebulę w bulionie 20 minut.",
+        "Zblenduj, dodaj śmietanę i dopraw."
+      ]
+    },
+    {
+      "id": "pl-025",
+      "title": "Sałatka szpinakowa z jajkiem",
+      "time_minutes": 12,
+      "tags": ["sałatka", "fit"],
+      "ingredients": [
+        { "name": "szpinak", "amount": 150, "unit": "g", "required": true },
+        { "name": "jajko", "amount": 2, "unit": "szt", "required": true },
+        { "name": "pomidor", "amount": 1, "unit": "szt", "required": true },
+        { "name": "olej", "amount": 1, "unit": "łyżka", "required": false }
+      ],
+      "steps": [
+        "Ugotuj jajka na twardo.",
+        "Wymieszaj szpinak z pomidorem, dodaj jajka i olej."
+      ]
+    },
+    {
+      "id": "pl-026",
+      "title": "Makaron z sosem pomidorowym",
+      "time_minutes": 25,
+      "tags": ["obiad", "włoskie"],
+      "ingredients": [
+        { "name": "makaron", "amount": 250, "unit": "g", "required": true },
+        { "name": "pomidor", "amount": 4, "unit": "szt", "required": true },
+        { "name": "czosnek", "amount": 2, "unit": "ząbki", "required": true },
+        { "name": "bazylia", "amount": 5, "unit": "listków", "required": false },
+        { "name": "olej", "amount": 2, "unit": "łyżki", "required": true }
+      ],
+      "steps": [
+        "Ugotuj makaron.",
+        "Podsmaż czosnek, dodaj pomidory i gotuj sos 15 minut.",
+        "Wymieszaj z makaronem i bazylią."
+      ]
+    },
+    {
+      "id": "pl-027",
+      "title": "Owsianka z bananem",
+      "time_minutes": 10,
+      "tags": ["śniadanie", "szybkie"],
+      "ingredients": [
+        { "name": "płatki owsiane", "amount": 60, "unit": "g", "required": true },
+        { "name": "mleko", "amount": 250, "unit": "ml", "required": true },
+        { "name": "banan", "amount": 1, "unit": "szt", "required": true },
+        { "name": "cukier", "amount": 1, "unit": "łyżka", "required": false }
+      ],
+      "steps": [
+        "Gotuj płatki na mleku 5 minut.",
+        "Dodaj pokrojonego banana i opcjonalnie cukier."
+      ]
+    },
+    {
+      "id": "pl-028",
+      "title": "Pieczone warzywa z serem",
+      "time_minutes": 40,
+      "tags": ["obiad", "wegetariańskie"],
+      "ingredients": [
+        { "name": "cukinia", "amount": 1, "unit": "szt", "required": true },
+        { "name": "papryka", "amount": 1, "unit": "szt", "required": true },
+        { "name": "cebula", "amount": 1, "unit": "szt", "required": true },
+        { "name": "ser", "amount": 100, "unit": "g", "required": true },
+        { "name": "olej", "amount": 2, "unit": "łyżki", "required": true }
+      ],
+      "steps": [
+        "Pokrój warzywa, wymieszaj z olejem i piecz 30 minut.",
+        "Posyp serem i zapiecz jeszcze 5 minut."
+      ]
+    },
+    {
+      "id": "pl-029",
+      "title": "Kurczak w papryce",
+      "time_minutes": 30,
+      "tags": ["obiad", "sycące"],
+      "ingredients": [
+        { "name": "kurczak", "amount": 400, "unit": "g", "required": true },
+        { "name": "papryka", "amount": 2, "unit": "szt", "required": true },
+        { "name": "cebula", "amount": 1, "unit": "szt", "required": true },
+        { "name": "czosnek", "amount": 2, "unit": "ząbki", "required": true },
+        { "name": "olej", "amount": 2, "unit": "łyżki", "required": true }
+      ],
+      "steps": [
+        "Podsmaż kurczaka z cebulą i czosnkiem.",
+        "Dodaj pokrojoną paprykę i duś 15 minut."
+      ]
+    },
+    {
+      "id": "pl-030",
+      "title": "Twaróg ze świeżymi warzywami",
+      "time_minutes": 8,
+      "tags": ["śniadanie", "fit"],
+      "ingredients": [
+        { "name": "twaróg", "amount": 200, "unit": "g", "required": true },
+        { "name": "ogórek", "amount": 1, "unit": "szt", "required": true },
+        { "name": "rzodkiewka", "amount": 4, "unit": "szt", "required": true },
+        { "name": "chleb", "amount": 2, "unit": "kromki", "required": false }
+      ],
+      "steps": [
+        "Podawaj twaróg z pokrojonymi warzywami.",
+        "Opcjonalnie wraz z pieczywem."
+      ]
+    },
+    {
+      "id": "pl-031",
+      "title": "Makaron z kurczakiem i brokułami",
+      "time_minutes": 30,
+      "tags": ["obiad", "fit"],
+      "ingredients": [
+        { "name": "makaron", "amount": 250, "unit": "g", "required": true },
+        { "name": "kurczak", "amount": 250, "unit": "g", "required": true },
+        { "name": "brokuł", "amount": 200, "unit": "g", "required": true },
+        { "name": "czosnek", "amount": 2, "unit": "ząbki", "required": true },
+        { "name": "olej", "amount": 2, "unit": "łyżki", "required": true }
+      ],
+      "steps": [
+        "Ugotuj makaron i brokuły.",
+        "Usmaż kurczaka z czosnkiem, połącz z makaronem i brokułami."
+      ]
+    },
+    {
+      "id": "pl-032",
+      "title": "Panierowany ser",
+      "time_minutes": 15,
+      "tags": ["przekąska", "szybkie"],
+      "ingredients": [
+        { "name": "ser", "amount": 200, "unit": "g", "required": true },
+        { "name": "jajko", "amount": 1, "unit": "szt", "required": true },
+        { "name": "mąka", "amount": 3, "unit": "łyżki", "required": true },
+        { "name": "olej", "amount": 4, "unit": "łyżki", "required": true }
+      ],
+      "steps": [
+        "Kroimy ser, obtaczamy w mące, jajku i smażymy na złoto."
+      ]
+    }
+  ]
+}
