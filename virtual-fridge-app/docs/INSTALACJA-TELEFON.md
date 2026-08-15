@@ -7,28 +7,29 @@
 3. Wybierz repozytorium: **`constellation-particles`**
 4. Gdy zapyta o folder projektu, wpisz: **`virtual-fridge-app/mobile`**
 
-## Krok 2 — token Expo (telefon, 2 min)
+## Krok 2 — dwa secrety (telefon, 3 min)
 
-1. W expo.dev otwórz menu (☰) → **Account Settings**
+### A) Token Expo
+1. expo.dev → menu ☰ → **Account Settings**
 2. **Access tokens** → **Create token**
-3. Skopiuj token (pokazuje się raz)
+3. GitHub → repo → **Settings** → **Secrets and variables** → **Actions**
+4. **New repository secret** → Name: `EXPO_TOKEN`, Value: token
 
-## Krok 3 — token w GitHub (telefon)
+### B) Project ID (WAŻNE — bez tego build pada)
+1. expo.dev → projekt **Lodówka** → **Details** (lub Settings → General)
+2. Skopiuj **Project ID** (UUID, np. `a1b2c3d4-e5f6-...`)
+3. GitHub → **Secrets** → **New repository secret**
+   - Name: `EXPO_PROJECT_ID`
+   - Value: wklej Project ID
 
-1. Otwórz GitHub → repo **constellation-particles**
-2. **Settings** → **Secrets and variables** → **Actions**
-3. **New repository secret**
-   - Name: `EXPO_TOKEN`
-   - Value: wklej token z kroku 2
-
-## Krok 4 — uruchom build w chmurze
+## Krok 3 — uruchom build w chmurze
 
 1. GitHub → repo → zakładka **Actions**
 2. Wybierz workflow **Build Android APK (EAS)**
 3. **Run workflow** → **Run workflow**
 4. Poczekaj ~10–20 min (możesz zamknąć przeglądarkę)
 
-## Krok 5 — pobierz APK na telefon
+## Krok 4 — pobierz APK na telefon
 
 1. Wróć na **expo.dev** → projekt **Lodówka**
 2. Zakładka **Builds** (w menu projektu)
