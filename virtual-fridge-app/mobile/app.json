@@ -9,12 +9,14 @@
     "scheme": "wirtualna-lodowka",
     "userInterfaceStyle": "automatic",
     "ios": {
+      "bundleIdentifier": "com.kubafraceks.lodowka",
       "supportsTablet": true,
       "infoPlist": {
         "NSCameraUsageDescription": "Aplikacja potrzebuje dostępu do kamery, aby skanować kody kreskowe produktów."
       }
     },
     "android": {
+      "package": "com.kubafraceks.lodowka",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
