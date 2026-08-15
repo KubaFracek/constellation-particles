@@ -6,26 +6,25 @@ Aplikacja mobilna do skanowania kodów kreskowych produktów, zarządzania wirtu
 
 | Plik / folder | Opis |
 |---------------|------|
-| [`docs/ADVANCED_PROMPT.md`](docs/ADVANCED_PROMPT.md) | Turbo zaawansowany prompt + pełna specyfikacja techniczna |
-| `app/` | *(wkrótce)* kod aplikacji Expo |
-| `assets/` | *(wkrótce)* seed przepisów, grafiki |
+| [`mobile/`](mobile/) | **Aplikacja Expo** — kod, uruchomienie, testy |
+| [`mobile/README.md`](mobile/README.md) | Instrukcja uruchomienia na telefonie (Expo Go) |
+| [`docs/ADVANCED_PROMPT.md`](docs/ADVANCED_PROMPT.md) | Pełna specyfikacja techniczna + prompt AI |
 
-## Szybki start
+## Szybki start na telefonie
 
-1. Przeczytaj [`docs/ADVANCED_PROMPT.md`](docs/ADVANCED_PROMPT.md) — sekcja **13. PROMPT DO WKLEJENIA**.
-2. Wklej prompt do Cursor Composer / agenta AI, aby rozpocząć implementację.
-3. Wszystkie kolejne prace nad tym projektem trzymaj w tym folderze.
+1. Zainstaluj **Expo Go** na Androidzie lub iPhone ([instrukcja w mobile/README.md](mobile/README.md)).
+2. Na komputerze:
+   ```bash
+   cd virtual-fridge-app/mobile
+   npm install
+   npm start
+   ```
+3. Zeskanuj QR w Expo Go — aplikacja działa na telefonie.
 
-## Rekomendowany stack
-
-- **Expo (React Native) + TypeScript**
-- **SQLite + Drizzle ORM** (offline-first)
-- **Open Food Facts API** (produkty po kodzie EAN)
-- **react-native-vision-camera** (skanowanie kodów)
-- Własny **Recipe Matcher** (dopasowanie składników)
+> **Expo Go** służy do testów. Docelowa wersja w sklepie Play/App Store budowana jest przez **EAS Build** (opis w `mobile/README.md`).
 
 ## Status
 
 - [x] Specyfikacja i prompt
-- [ ] Scaffolding aplikacji
-- [ ] MVP (skan + lodówka + przepisy)
+- [x] MVP aplikacji (skan + lodówka + przepisy)
+- [ ] Publikacja w sklepach (EAS Build)
